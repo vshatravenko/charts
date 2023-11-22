@@ -1,0 +1,5 @@
+apiVersion: v2
+name: ext-secret
+description: A Helm chart for Secret and ConfigMap creation
+type: application
+version: 0.1.0

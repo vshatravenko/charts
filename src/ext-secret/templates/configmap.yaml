@@ -1,0 +1,13 @@
+{{- range $name, $data := .Values.configMaps }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $name }}
+  labels:
+    {{- include "ext-secret.labels" $ | nindent 4 }}
+data:
+  {{- range $k, $v := $data }}
+    {{ $k }}: {{ $v | quote }}
+  {{- end }}
+{{- end }}

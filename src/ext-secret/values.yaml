@@ -1,0 +1,14 @@
+# Default values for ext-secret.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+nameOverride: "ext-secret"
+fullnameOverride: "ext-secret"
+
+secrets:
+# example1:
+#   VAR_1: value1
+
+configMaps: {}
+# example2:
+#   VAR_2: value2

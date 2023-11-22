@@ -1,0 +1,17 @@
+name: Publish Helm charts
+on:
+  push:
+    branches: ["master"]
+jobs:
+  publish:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare build tools
+        run: ./bin/prep_tools.sh
+      - name: Build & publish the Helm repository
+        run: ./bin/publish_repo.sh
+        env:
+          CHARTS_S3_ACCESS_KEY: ${{ secrets.CHARTS_S3_ACCESS_KEY }}
+          CHARTS_S3_SECRET_KEY: ${{ secrets.CHARTS_S3_SECRET_KEY }}
+          CHARTS_S3_ENDPOINT: ${{ secrets.CHARTS_S3_ENDPOINT }}

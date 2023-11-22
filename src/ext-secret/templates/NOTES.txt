@@ -1,0 +1,18 @@
+Successfully created the following in {{ .Release.Namespace }} namespace:
+{{- with .Values.secrets }}
+  Secrets:
+  {{- range $k, $v := . }}
+    - {{ $k }}
+  {{- end }}
+{{- end }}
+
+{{- with .Values.configMaps }}
+  ConfigMaps:
+  {{- range $k, $v := . }}
+    - {{ $k }}
+  {{- end }}
+{{- end }}
+
+{{- if not (or (.Values.configMaps) (.Values.secrets)) }}
+  Nothing :)
+{{- end }}
