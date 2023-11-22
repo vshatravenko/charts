@@ -1,5 +1,7 @@
 # Helm Chart Repository
 
+![Build status](https://github.com/vshatravenko/charts/actions/workflows/helm-publish.yml/badge.svg)
+
 This repo contains public Helm charts that are then published to https://charts.2d33p.cloud
 
 ## Usage
